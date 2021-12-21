@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var nums = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+
+        console.log('Example w/ Numbers:\n');
+        console.log('The array data: ', JSON.stringify(nums));
+
+        for (var i = 0; i < nums.length; i++) {
+            // Main/"top" array - accessing via "arr[i]"
+            for (var j = 0; j < nums[i].length; j++) {
+                // here we loop through the "child" arrays
+                let helpfulLabel = `nums[${i}][${j}]`
+                let value = nums[i][j]
+                console.log(helpfulLabel, 'Value=' + value);
+            }
+        }
+
+        console.log('\nExample w/ String Data:\n');
+        var letters = [['a', 'b', 'c'], ['d', 'e', 'f'], ['x', 'y', 'z']];
+        console.log('The array data: ', JSON.stringify(letters));
+
+        for (var i = 0; i < letters.length; i++) {
+            for (var j = 0; j < letters[i].length; j++) {
+                let helpfulLabel = `letters[${i}][${j}]`
+                let value = letters[i][j]
+                console.log(helpfulLabel, 'Value=' + value);
+            }
+        }
+    </script>
+</body>
+
+</html>
