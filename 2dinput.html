@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>var IDs = [];
+        $('#divDynamicFields input').each(function()
+        { 
+            IDs.push([this.id, $(this).val()]); 
+        });
+        for (var i = 0; i < IDs.length; i++)
+        {
+            CallFunction(IDs[i][0], IDs[i][1]);
+        }
+        
+        function CallFunction(id, value)
+        {
+            console.log("ID: " + id + ", value: " + value);
+        }</script>
+</head>
+<body>
+    <div id="divDynamicFields">
+        <input id="z" value="a" />
+        <input id="y" value="b" />
+        <input id="x" value="c" />
+         <input id="x" value="c" />
+    </div>
+</body>
+</html>
