@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <div class="wrapper">
+            <input type="text" name="store[]" placeholder="store">
+            <input type="text" name="price[]" placeholder="price">
+            <div class="innerwrapper">
+                <input type="text" name="color[]" placeholder="color">
+                <input type="text" name="size[]" placeholder="size">
+            </div>
+        </div>
+        <a href="" class="btn">Add </a>
+        <p><a href="" class="btnitem">AddItem </a></p>
+    </form>
+</body>
+<script>
+    $(document).ready(function () {
+        var max_field = 10;
+        var wrapper = $(".wrapper");
+        var innerwrapper = $(".innerwrapper");
+        var add_button = $(".btn");
+        var add_inner_button = $(".btnitem");
+        var x = 1;
+
+        $(add_button).click(function (e) {
+            e.preventDefault();
+            if (x < max_field) {
+                console.log(x);
+                x++;
+                $(wrapper).append('<div class="wrapper"><input type="text" name="store[]" placeholder="store"><input type="text" name="price[]" placeholder="price"><div class="innerwrapper"><input type="text" name="color[]" placeholder="color"><input type="text" name="size[]" placeholder="size"></div><a href="" class="removebtn">Remove Wrapper </a></div>')
+                //$(wrapper).append('<div><input type="text" name="store[]" placeholder="store"><input type="text" name="price[]" placeholder="price"><a href="" class="removebtn">Remove </a></div>')
+            }
+        });
+        $(add_inner_button).click(function (e) {
+            e.preventDefault();
+            if (x < max_field) {
+                console.log(x);
+                x++;
+                $(innerwrapper).append('<div><input type="text" name="color[]" placeholder="color"><input type="text" name="size[]" placeholder="size"></div><a href="" class="removeinnerbtn">Remove Inner </a></div>')
+            }
+        });
+        $(wrapper).on("click", ".removebtn", function (e) {
+            e.preventDefault();
+            $(this).parent('div').remove();
+            x--;
+        })
+        $(innerwrapper).on("click", ".removeinnerbtn", function (e) {
+            e.preventDefault();
+            $(this).parent('div').remove();
+            x--;
+        })
+
+    });
+</script>
+
+</html>
