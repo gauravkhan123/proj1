@@ -18,9 +18,10 @@
                 <input type="text" name="color[]" placeholder="color">
                 <input type="text" name="size[]" placeholder="size">
             </div>
+            <p><a href="" class="btnitem">AddItem </a></p>
         </div>
         <a href="" class="btn">Add </a>
-        <p><a href="" class="btnitem">AddItem </a></p>
+        
     </form>
 </body>
 <script>
@@ -46,7 +47,7 @@
             if (x < max_field) {
                 console.log(x);
                 x++;
-                $(innerwrapper).append('<div><input type="text" name="color[]" placeholder="color"><input type="text" name="size[]" placeholder="size"></div><a href="" class="removeinnerbtn">Remove Inner </a></div>')
+                $(innerwrapper).append('<div><input type="text" name="color[]" placeholder="color"><input type="text" name="size[]" placeholder="size"></div><p><a href="" class="btnitem">AddItem </a></p><a href="" class="removeinnerbtn">Remove Inner </a></div>')
             }
         });
         $(wrapper).on("click", ".removebtn", function (e) {
