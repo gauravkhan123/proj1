@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+  font-family: sans-serif;
+  margin: 10px;
+}
+table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+.delete {
+  color: red;
+  cursor: pointer;
+  font-size: 80%;
+}
+    </style>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<table>
+  <thead>
+    <tr>
+        <th>Index</th>
+        <th>Name</th>
+        <th>Property</th>
+        <th>Edit/Delete</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td class="index">Index here</td>
+        <td>NameOne</td>
+        <td>PropOne</td>
+        <td><span class="edit">Edit</span> <span class="delete">Delete</span></td>
+    </tr>
+    <tr>
+        <td class="index">2</td>
+        <td>NameTwo</td>
+        <td>PropTwo</td>
+        <td><span class="edit">Edit</span> <span class="delete">Delete</span></td>
+    </tr>
+    <tr>
+        <td class="index">3</td>
+        <td>NameThree</td>
+        <td>PropThree</td>
+        <td><span class="edit">Edit</span> <span class="delete">Delete</span></td>
+    </tr>
+      <tr>
+        <td class="index"></td>
+        <td>Name 4</td>
+        <td>Prop 4</td>
+        <td><span class="edit">Edit</span> <span class="delete">Delete</span></td>
+    </tr>
+      <tr>
+        <td class="index"></td>
+        <td>Name 5</td>
+        <td>Prop 5</td>
+        <td><span class="edit">Edit</span> <span class="delete">Delete</span></td>
+    </tr>
+      <tr>
+        <td class="index"></td>
+        <td>Name 6</td>
+        <td>Prop 6</td>
+        <td><span class="edit">Edit</span> <span class="delete">Delete</span></td>
+    </tr>
+</tbody>
+</table>
+</body>
+<script>
+    $(document).ready(function(){
+
+// your function, copied 100%
+function setIndex(){
+ $("td.index").each(function(index) {
+     $(this).text(++index);
+ });
+}
+
+// set the index to begin with. Note the last three 
+// row indexes are actually empty in the sample HTML
+setIndex();
+
+// Move the click listener to the table. 
+$('table').on('click', '.delete', function(){    
+  // remove the tr...
+  $(this).parents('tr').remove();
+  //... and reset the index
+  setIndex();  
+})
+
+});
+</script>
+</html>
